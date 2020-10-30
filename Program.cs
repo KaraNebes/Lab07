@@ -19,7 +19,7 @@ namespace Lab07
         static string ReadStringFronFile()
         {
             string input;
-            FileStream file = new FileStream(@"input.txt", FileMode.Open); //создаем файловый поток
+            FileStream file = new FileStream("../../../input.txt", FileMode.Open); //создаем файловый поток
             StreamReader reader = new StreamReader(file); // создаем «потоковый читатель» и связываем его с файловым потоком
             input = reader.ReadToEnd(); //считываем все данные с потока
             reader.Close(); //закрываем поток
@@ -41,7 +41,7 @@ namespace Lab07
 
         static void WriteAnswerToFile (string output)
         {
-            FileStream file = new FileStream(@"output.txt", FileMode.Create); //создаем файловый поток
+            FileStream file = new FileStream("../../../ output.txt", FileMode.Create); //создаем файловый поток
             StreamWriter writer = new StreamWriter(file); //создаем «потоковый писатель» и связываем его с файловым потоком
             writer.Write(output); //записываем в файл
             writer.Close(); //закрываем поток. Не закрыв поток, в файл ничего не запишется
